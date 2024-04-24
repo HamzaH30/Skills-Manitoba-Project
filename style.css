@@ -1,0 +1,355 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+/* 
+  Using a mobile-first approach for styling.
+*/
+
+/* Defining the colour palette */
+:root {
+  --off-red: #ea0800;
+  --engineering-orange: #ca0c04;
+  --dark-goldenrod: #a97909;
+  --arylide-yellow: #f0d86e;
+  --cornsilk: #fffbde;
+  --celestial-blue: #009cdc;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  Following styles are mobile-specific typographies
+*/
+
+h1 {
+  font-family: "Prompt", sans-serif;
+  font-size: 28px;
+}
+
+h2 {
+  font-family: "Prompt", sans-serif;
+  font-size: 24px;
+}
+
+h3 {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 18px;
+}
+
+/* End of mobile-specific typographies */
+
+p,
+form,
+nav a {
+  font-family: "Hind Siliguri", sans-serif;
+  font-size: 16px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+  padding: 1rem;
+}
+
+nav {
+  display: none;
+}
+
+.container {
+  margin: auto;
+  max-width: 700px;
+}
+
+main .container {
+  margin-bottom: 2rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  width: 20px;
+}
+
+.top,
+.middle,
+.bottom {
+  background-color: black;
+  width: 100%;
+  height: 5px;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: black;
+  height: 100%;
+  width: 50%;
+  z-index: 4;
+  padding: 10rem 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+
+  transform: translateX(100%); /* Start from outside the screen */
+
+  transition: transform 0.5s ease-in-out;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+nav a,
+.mobile-menu a {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.mobile-menu a {
+  font-size: 20px;
+  color: white;
+}
+
+nav a:first-child {
+  color: var(--celestial-blue);
+}
+
+nav a:nth-child(2) {
+  color: var(--dark-goldenrod);
+}
+
+nav a:last-child {
+  color: var(--off-red);
+}
+
+.show-menu {
+  transform: translateX(0);
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  transition: background-color 0.5s ease-in-out;
+}
+
+.opened-menu {
+  z-index: 5;
+}
+
+.opened-menu .middle {
+  display: none;
+}
+
+.opened-menu .top {
+  transform: rotate(45deg) translate(4px, 4px);
+  background-color: white;
+}
+
+.opened-menu .bottom {
+  transform: rotate(-45deg) translate(0, 0);
+  background-color: white;
+}
+
+.border-line {
+  width: 100%;
+  height: 5px;
+  background-color: var(--dark-goldenrod);
+}
+
+.img-full {
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 300px;
+  height: 400px;
+  width: 100%;
+
+  margin-bottom: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
+
+  color: white;
+  text-align: center;
+}
+
+.img-full h2 {
+  text-transform: capitalize;
+}
+
+.hero-img-section {
+  background-image: url("assets/banner/hero-banner-hunt.jpg");
+}
+
+.hero-img-section h1 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero .description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hero .description h2 {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero p {
+  color: var(--off-red);
+  font-weight: bold;
+}
+
+.canada-heart-sleeve {
+  background: url("assets/banner/hero-banner-winter.jpg");
+}
+
+.heart-needs {
+  text-align: center;
+}
+
+.heart-needs h2 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.mb-passion .img-full {
+  background: url("assets/banner/hero-banner-store.jpg");
+}
+
+.mb-passion .description {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.purchase-form {
+  background-color: var(--celestial-blue);
+  color: white;
+  text-align: center;
+  padding: 2rem 2rem;
+}
+
+.purchase-form h2 {
+  text-decoration: underline;
+}
+
+.purchase-form h3 {
+  color: black;
+}
+
+.purchase-form .text {
+  margin-bottom: 2rem;
+}
+
+form div {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.5rem;
+}
+
+label {
+  text-align: left;
+}
+
+input,
+select {
+  border-radius: 50px;
+  height: 2rem;
+  padding: 0 2rem;
+}
+
+.red-text {
+  color: var(--engineering-orange);
+}
+
+footer {
+  background-color: var(--arylide-yellow);
+}
+
+footer .container {
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gold-text {
+  color: var(--dark-goldenrod);
+}
+
+.red-text {
+  color: var(--engineering-orange);
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  /* Tablet specific typographies */
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  /* End of tablet specific typographies */
+
+  .hamburger-menu {
+    display: none;
+  }
+
+  nav {
+    display: unset;
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  /* Desktop specific typographies */
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  /* End of desktop specific typographies */
+
+  .container {
+    max-width: 1200px;
+  }
+}
